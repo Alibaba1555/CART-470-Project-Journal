@@ -7,3 +7,7 @@
 @media(max-width:620px){.masthead,main,.site-footer{padding-left:6vw;padding-right:6vw}.masthead{min-height:76px;flex-wrap:wrap;gap:.5rem}.course-term{display:none}.intro{grid-template-columns:1fr;padding:2rem 0;gap:1.8rem}h1 br{display:none}h1{font-size:3.2rem}.project-note{border-left:0;border-top:1px solid var(--line);padding:1.2rem 0 0;max-width:none}.project-note h2{margin:.5rem 0}.journal-layout{grid-template-columns:1fr;gap:1.8rem;padding-top:1.4rem}.index{position:static}.index-note{display:none}.week-link{justify-content:flex-start}.week-link>span:last-child{margin-left:auto}.entry-header h2 br{display:none}.discussion{gap:.6rem}.reflection{padding:1.25rem}.site-footer{flex-wrap:wrap}.site-footer>span:last-child{width:100%}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 @media print{.masthead,.index,.header-link,.entry-footer a,.site-footer,.skip-link{display:none}.intro{padding:0 0 2rem}.journal-layout{display:block}.entry{break-before:auto}.discussion{break-inside:avoid}body{background:white;color:black}.reflection{break-inside:avoid}}
+
+/* Week 3 discussion gallery. */
+.discussion--three{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:620px){.discussion--three{grid-template-columns:1fr}}
