@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tianshun Wu's CART 470 process journal — Documentary Encounters in the Hochelaga Archipelago.">
   <title>CART 470 — Tianshun Wu</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=week3-perspective-2">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23354754'/%3E%3Ctext x='20' y='28' text-anchor='middle' font-family='serif' font-size='28' fill='%23faf9f5'%3EJ%3C/text%3E%3C/svg%3E">
   <script src="script.js" defer></script>
 </head>
@@ -38,6 +38,7 @@
             <div class="entry-meta"><span class="week-badge">Week 03</span><span>Client meeting & concept development</span></div>
             <h2>First client meeting<br>& mapping connections</h2>
             <p class="entry-deck">Thinking about what visitors will discover and how they will explore.</p>
+            <a href="#perspective-title">View the 2D filter concept & user workflow ↓</a>
           </header>
           <div class="prose">
             <p>This week, our group met with the client for the first time to discuss <em>Documentary Encounters in the Archipelago</em>. Our project is an interactive map of the Hochelaga Archipelago. The meeting helped me understand what we need to consider beyond the map’s appearance: who will use it, what they might discover, and how the client could continue adding content after our work is finished.</p>
@@ -54,6 +55,33 @@
           <div class="prose">
             <p>Environmental issues also came up during the meeting, including pollution and birds eating trash. These examples made me think about connections that are difficult to see on a conventional map. Water, animals, and human activity move between islands, so an island’s story extends beyond its geographical boundary. Filters or different perspectives could help visitors discover these relationships. However, we still need to decide which ideas are meaningful and realistic to develop. We discussed mini-games and hidden discoveries, but their purpose would need to connect clearly to the stories being presented.</p>
             <p>Another consideration is how the project will be maintained. The client would ideally be able to add or change content independently, which means we need to plan for that from the beginning. We also discussed French, English, and the possibility of including an Indigenous language through collaboration. These conversations reminded me that our design decisions depend on further communication with the client and the people contributing to the project.</p>
+          </div>
+          <section class="perspective-concept" aria-labelledby="perspective-title">
+            <p class="eyebrow">Design exploration / Proposed direction</p>
+            <h3 id="perspective-title">One map. Different ways of seeing.</h3>
+            <div class="prose">
+              <p>At this stage, I am leaning toward a mainly 2D map that visitors can explore by dragging, zooming, and clicking on islands. Building on our discussion of filters, I would like to explore perspectives as a way of changing what the map reveals. A human perspective could highlight access points, bridges, and visitor stories, while a bird perspective could reveal habitats and movement between islands. The geography would stay the same, but the relationships brought into focus would change.</p>
+              <p>I also like the idea of letting visitors gradually build a map of connections through the stories they open. For example, after reading about access to one island, they could switch to a bird perspective and discover its relationship with another habitat. Opening that related story could reveal a connecting line with a short explanation. This would give the filters a role in storytelling and encourage visitors to explore further.</p>
+            </div>
+            <figure class="perspective-demo">
+              <fieldset class="perspective-switch">
+                <legend>Try a perspective filter</legend>
+                <input type="radio" name="perspective" id="view-human" checked><label for="view-human">01 / Human</label>
+                <input type="radio" name="perspective" id="view-bird"><label for="view-bird">02 / Bird</label>
+                <div class="perspective-panel panel-human"><p class="map-view-label">Human / Access & visits</p><svg viewBox="0 0 410 280" role="img" aria-label="Human perspective: a solid route connects Islands A and C. Island B has a restricted-access symbol."><rect width="410" height="280" rx="8" fill="#e3edf0"/><path d="M0 175Q100 140 210 155T410 130M0 190Q100 155 210 170T410 145" fill="none" stroke="#cbdce1"/><g fill="#dfe4d6" stroke="#7b8c7e" stroke-width="1.5"><path d="M54 124 Q34 79 82 64 Q118 50 157 77 L172 119 Q146 154 98 151Z"/><path d="M255 68 Q280 28 324 58 L351 97 Q337 133 291 124 L262 105Z"/><path d="M219 219 Q216 177 263 168 Q313 153 344 196 Q362 236 307 250 L252 248Z"/></g><g font-family="Arial,sans-serif" font-size="15" fill="#26343e"><text x="82" y="105">Island A</text><text x="273" y="87">Island B</text><text x="260" y="215">Island C</text></g><path d="M120 136 Q115 221 240 222" fill="none" stroke="#435d6b" stroke-width="4"/><circle cx="305" cy="111" r="10" fill="#faf9f5" stroke="#875f50" stroke-width="2"/><path d="M299 111h12" stroke="#875f50" stroke-width="2"/></svg><div class="concept-story"><span class="label">Example story prompt</span><p>An access story could explain how people reach Island A and why visits to Island B may be limited.</p></div></div>
+<div class="perspective-panel panel-bird"><p class="map-view-label">Bird / Habitats & movement</p><svg viewBox="0 0 410 280" role="img" aria-label="Bird perspective: dashed routes link all three islands as possible connected habitats."><rect width="410" height="280" rx="8" fill="#e3edf0"/><path d="M0 175Q100 140 210 155T410 130M0 190Q100 155 210 170T410 145" fill="none" stroke="#cbdce1"/><g fill="#dfe4d6" stroke="#7b8c7e" stroke-width="1.5"><path d="M54 124 Q34 79 82 64 Q118 50 157 77 L172 119 Q146 154 98 151Z"/><path d="M255 68 Q280 28 324 58 L351 97 Q337 133 291 124 L262 105Z"/><path d="M219 219 Q216 177 263 168 Q313 153 344 196 Q362 236 307 250 L252 248Z"/></g><g font-family="Arial,sans-serif" font-size="15" fill="#26343e"><text x="82" y="105">Island A</text><text x="273" y="87">Island B</text><text x="260" y="215">Island C</text></g><path d="M130 72 Q211 6 281 63 M320 121 Q381 160 321 186 M245 194 Q157 178 122 139" fill="none" stroke="#61784b" stroke-width="3" stroke-dasharray="7 7"/><path d="M186 46q10 -14 20 0q10 -14 20 0" fill="none" stroke="#61784b" stroke-width="3"/></svg><div class="concept-story"><span class="label">Example story prompt</span><p>A related habitat story could reveal how birds use several islands, making a different network visible.</p></div></div>
+              </fieldset>
+              <figcaption><span>Concept sketch / Same islands, different connections</span>Illustrative islands and routes only. Actual stories, access details and wildlife connections would need to come from the client’s material. Switching here demonstrates filters; story discovery is a proposed next step.</figcaption>
+            </figure>
+            <ol class="concept-flow" aria-label="Proposed user workflow">
+              <li><span>01 / Enter</span><strong>Explore the 2D map</strong><p>Choose a language, then browse the islands.</p></li>
+              <li><span>02 / Discover</span><strong>Open an island story</strong><p>Read, look or listen to a documentary excerpt.</p></li>
+              <li><span>03 / Reconsider</span><strong>Switch perspective</strong><p>Use a filter to reveal another set of relationships.</p></li>
+              <li><span>04 / Connect</span><strong>Follow a related story</strong><p>Open another island and see why the two are connected. Continue exploring from there.</p></li>
+            </ol>
+            <div class="prose"><p>For an initial test, I would keep this to three islands and two perspectives: human and bird. I want to find out whether visitors understand what changes when they switch filters, and whether the connections encourage them to open another story. This is a direction I would like to discuss with the group and client before treating it as a final design.</p></div>
+          </section>
+          <div class="prose">
             <p>As a group, we outlined milestones that move from a static map to navigation, additional information, and final polish. Our next step is to review our Figma prototypes and combine them into a shared direction before the October 7 client meeting. For me, the main challenge now is narrowing our many ideas into an experience that is understandable, engaging, and manageable for our team to build.</p>
           </div>
           <footer class="entry-footer"><span>CART 470 / Week 03</span><a href="#top">Back to top ↑</a></footer>

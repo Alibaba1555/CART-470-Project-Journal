@@ -11,3 +11,24 @@
 /* Week 3 discussion gallery. */
 .discussion--three{grid-template-columns:repeat(3,minmax(0,1fr))}
 @media(max-width:620px){.discussion--three{grid-template-columns:1fr}}
+
+/* Perspective filter concept, scoped to the Week 3 journal. */
+.perspective-concept{margin:2.5rem 0;padding-top:2rem;border-top:1px solid var(--line)}
+.perspective-concept h3{font-family:Georgia,serif;font-size:clamp(1.65rem,3vw,2.3rem);font-weight:400;line-height:1.2;margin:0 0 1.5rem}
+.perspective-demo{margin:2rem 0;background:var(--white);padding:clamp(1rem,3vw,1.5rem);border:1px solid var(--line);border-radius:8px}
+.perspective-switch{padding:0;margin:0;border:0;min-width:0;position:relative}
+.perspective-switch legend{font-size:.8rem;color:var(--muted);margin-bottom:.8rem}
+.perspective-switch input{position:absolute;width:1px;height:1px;opacity:0}
+.perspective-switch label{display:inline-block;padding:.5rem 1rem;border:1px solid var(--line);border-radius:30px;margin:0 .4rem .8rem 0;font-size:.875rem;cursor:pointer}
+.perspective-switch input:checked+label{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.perspective-switch input:focus-visible+label{outline:3px solid var(--accent);outline-offset:3px}
+.perspective-panel{display:none}.perspective-panel svg{display:block;width:100%;max-height:370px}
+#view-human:checked~.panel-human,#view-bird:checked~.panel-bird{display:block}
+.map-view-label{font-size:.875rem;margin:.5rem 0 .8rem;font-weight:600}
+.concept-story{padding:1rem 0}.concept-story p{margin:.4rem 0 0;font-size:.95rem}
+.concept-flow{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:1rem;padding:0;margin:2rem 0}
+.concept-flow li{border:1px solid var(--line);padding:1.1rem;background:var(--white);border-radius:5px}
+.concept-flow li>span{display:block;font-size:.75rem;letter-spacing:.06em;color:var(--muted);margin-bottom:.5rem}
+.concept-flow strong{display:block;font-size:1rem}.concept-flow p{font-size:.9rem;margin:.4rem 0 0}
+@media(max-width:620px){.concept-flow{grid-template-columns:1fr}}
+@media print{.perspective-panel{display:block!important}.perspective-switch label,.perspective-switch legend{display:none}.perspective-demo{break-inside:auto}.perspective-panel{break-inside:avoid}}
