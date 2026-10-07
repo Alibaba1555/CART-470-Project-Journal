@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tianshun Wu's CART 470 process journal — Documentary Encounters in the Hochelaga Archipelago.">
   <title>CART 470 — Tianshun Wu</title>
-  <link rel="stylesheet" href="styles.css?v=week3-perspective-2">
+  <link rel="stylesheet" href="styles.css?v=week4-water-1">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23354754'/%3E%3Ctext x='20' y='28' text-anchor='middle' font-family='serif' font-size='28' fill='%23faf9f5'%3EJ%3C/text%3E%3C/svg%3E">
-  <script src="script.js" defer></script>
+  <script src="script.js?v=week4-water-1" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#journal">Skip to journal</a>
@@ -25,6 +25,7 @@
       <aside class="index" aria-label="Journal index">
         <p class="eyebrow">Field notes / Index</p>
         <nav aria-label="Weekly entries">
+          <a class="week-link" href="#week-04"><span class="week-number">04</span><span>Water animation<br>& material experiments</span><span aria-hidden="true">↗</span></a>
           <!-- Add a new link here when you add an entry. -->
           <a class="week-link" href="#week-03"><span class="week-number">03</span><span>Client meeting<br>& mapping connections</span><span aria-hidden="true">↗</span></a>
           <a class="week-link" href="#week-02"><span class="week-number">02</span><span>Understanding<br>& brainstorming</span><span aria-hidden="true">↗</span></a>
@@ -33,6 +34,48 @@
       </aside>
       <div class="entries">
         <!-- WEEKLY ENTRY: copy an article and change its id, week, title and content. -->
+                <article class="entry" id="week-04">
+          <header class="entry-header">
+            <div class="entry-meta"><span class="week-badge">Week 04</span><time datetime="2026-10-06">October 6, 2026</time><span>Water animation & material experiments</span></div>
+            <h2>Making water move<br>& finding a material language</h2>
+            <p class="entry-deck">Testing how currents can connect the islands without overwhelming the map.</p>
+            <a href="#water-preview">Try the water prototype ↓</a>
+          </header>
+          <div class="prose">
+            <h3>From a proposed map to a working test</h3>
+            <p>Last week, I explored how a 2D map could reveal relationships between islands through different perspectives. This week, I focused on one part of that idea: the water between the islands. I wanted to test whether movement could make that space feel connected, while developing a visual style suited to our fine arts project and its intended museum audience.</p>
+            <p>I worked on an HTML, CSS, and JavaScript prototype with simplified outlines based on real island geography. I used Island A and Island B as temporary names and added a camera transition when selecting an island. Most of my work went into the water: creating currents, adjusting their behaviour, and repeatedly revising their appearance.</p>
+            <p>The prototype lets me click two points to define a current, then change its speed, width, and strength independently. Paths are calculated around the islands, and currents can be reversed or deleted. I also revised the endpoint labels to follow A1–A2, A3–A4, and so on, rather than leaving an increasingly confusing list of current numbers. These controls make it easier to compare variations during development.</p>
+          </div>
+          <section class="water-preview" id="water-preview" aria-labelledby="water-preview-title">
+            <p class="eyebrow">Working prototype / Interactive evidence</p>
+            <h3 id="water-preview-title">Explore the current water study</h3>
+            <p>Select <strong>Open preview</strong> to test it here. In the prototype, choose <strong>+ Add current</strong>, then click two points in the water. Adjust Speed, Width, and Strength; add another current to examine the overlap. Click an island to focus on it, or use Overview to return.</p>
+            <div class="preview-actions">
+              <button type="button" id="preview-toggle" aria-expanded="false" aria-controls="water-frame-wrap">Open preview</button>
+              <a href="https://alibaba1555.github.io/CART-470-Water-Effect-Test/" target="_blank" rel="noopener">Open in a new tab ↗</a>
+            </div>
+            <div id="water-frame-wrap" hidden></div>
+            <p class="preview-note">Development study, not a finished visitor interface. Use Pause inside the prototype to stop the animation, or close this preview to stop it running. If the embedded page does not load, use the new-tab link. This live page may change as development continues.</p>
+            <noscript><p>The embedded preview requires JavaScript. You can still open the prototype using the link above.</p></noscript>
+          </section>
+          <div class="prose">
+            <h3>What changed through iteration</h3>
+            <p>I initially aimed for an ink-inspired appearance, but the early results exposed a difference between a texture that looks interesting and one that communicates flowing water. Thin repeated lines became visually busy, while larger ink patches looked like separate blobs. Increasing softness made the image less clear without resolving the movement. I gradually moved toward longer, curved marks that follow the flow and change shape as they travel.</p>
+            <p>An unexpected result became the most useful visual discovery. The light and dark edges of the marks looked embossed, almost like paper wrinkling after becoming wet. At first, this seemed to be a departure from the ink effect, but I decided to keep it. I strengthened the damp areas and the shadows around the folds, while retaining pale highlights. This gave me a more specific direction to explore: water expressed through the changing surface of paper.</p>
+            <aside class="reflection"><span class="label">Working thought</span><p>The wet-paper effect emerged from an iteration I initially saw as imperfect. It became useful when I reconsidered what kind of material the map could suggest.</p></aside>
+            <p>The folds alone did not always make the whole current easy to read, so I brought back a subtle darker layer with slowly changing wave edges. I kept this layer restrained and limited how much overlapping areas could darken. I also made the end of a current gradually slow down, narrow, and fade, because a sudden cutoff made the animation feel artificial. These changes helped connect the small surface details to the larger direction of movement.</p>
+            <h3>What the prototype does—and what remains unresolved</h3>
+            <p>The current version gives me a way to explore direction, rhythm, and a wet-paper texture together. However, adding more currents raises a different problem: an effect that works around one island may become distracting across a larger map. I introduced shared density limits and showed endpoint labels only for the selected current. I want the water to support the islands and their stories, so visual intensity cannot simply increase with the number of currents.</p>
+            <p>The currents use a shared flow field to approximate interaction and bend around land. This is an artistic approximation, not a validated simulation of the archipelago’s actual water movement. That distinction matters in a documentary project: visitors could interpret an animated route as factual information. Before using currents to communicate environmental relationships, we need to establish with the client what the animation represents and what evidence would support it.</p>
+            <p>I also need to separate the editing tool from the visitor experience. Clicking two points and adjusting sliders is useful for my experiments, but it does not yet explain why a museum visitor should interact with the water. The prototype currently tests visual behaviour; it does not yet connect a current to documentary content or demonstrate that visitors understand its meaning. I have not yet gathered visitor feedback on this version.</p>
+            <h3>Next tests</h3>
+            <p>My next step is to bring this version to the group and client discussion, then compare a sparse map with a version containing several currents. I want to ask whether people can identify the direction of movement, whether the wet-paper texture suggests water to them, and whether they still notice the islands first. I would also test the map with a story panel open to see whether the animation competes with reading.</p>
+            <p>Before expanding the visual treatment, I need to check performance in the intended display context and consider a reduced-motion or static view. The most important question now is whether this material style helps people explore connections. This week gave me a working visual direction and a more flexible testing tool, but its value for the final experience still needs to be tested with content and an audience.</p>
+          </div>
+          <footer class="entry-footer"><span>CART 470 / JOURNAL-ENTRY-WK-4</span><a href="#top">Back to top ↑</a></footer>
+        </article>
+
         <article class="entry" id="week-03">
           <header class="entry-header">
             <div class="entry-meta"><span class="week-badge">Week 03</span><span>Client meeting & concept development</span></div>

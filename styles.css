@@ -32,3 +32,16 @@
 .concept-flow strong{display:block;font-size:1rem}.concept-flow p{font-size:.9rem;margin:.4rem 0 0}
 @media(max-width:620px){.concept-flow{grid-template-columns:1fr}}
 @media print{.perspective-panel{display:block!important}.perspective-switch label,.perspective-switch legend{display:none}.perspective-demo{break-inside:auto}.perspective-panel{break-inside:avoid}}
+
+/* Week 4 live prototype. */
+.prose h3{font-family:Georgia,serif;font-size:1.55rem;font-weight:400;line-height:1.3;margin:2.2rem 0 1rem}
+.water-preview{margin:2.5rem 0;padding:clamp(1rem,2vw,1.6rem);border:1px solid var(--line);border-radius:8px;background:var(--white)}
+.water-preview h3{font-family:Georgia,serif;font-size:1.8rem;font-weight:400;line-height:1.25;margin:0 0 1rem}
+.preview-actions{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;margin:1.2rem 0}
+.preview-actions button{font:inherit;background:var(--ink);color:var(--white);padding:.6rem 1rem;border:1px solid var(--ink);border-radius:4px;cursor:pointer;min-height:44px}
+.preview-actions button:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.preview-actions a{font-size:.9rem}.preview-note{font-size:.82rem;color:var(--muted);margin:1rem 0 0}
+#water-frame-wrap[hidden]{display:none}#water-frame-wrap{margin-top:1rem}
+#water-frame-wrap iframe{display:block;width:100%;height:720px;border:1px solid var(--line);border-radius:4px;background:#bbcfc6}
+@media(max-width:620px){#water-frame-wrap iframe{height:650px}}
+@media print{.preview-actions button,#water-frame-wrap{display:none}.water-preview{break-inside:avoid}}
