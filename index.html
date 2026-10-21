@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tianshun Wu's CART 470 process journal — Documentary Encounters in the Hochelaga Archipelago.">
   <title>CART 470 — Tianshun Wu</title>
-  <link rel="stylesheet" href="styles.css?v=week4-water-1">
+  <link rel="stylesheet" href="styles.css?v=week5-island-name-1">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23354754'/%3E%3Ctext x='20' y='28' text-anchor='middle' font-family='serif' font-size='28' fill='%23faf9f5'%3EJ%3C/text%3E%3C/svg%3E">
-  <script src="script.js?v=week4-water-1" defer></script>
+  <script src="script.js?v=week5-island-name-1" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#journal">Skip to journal</a>
@@ -25,6 +25,7 @@
       <aside class="index" aria-label="Journal index">
         <p class="eyebrow">Field notes / Index</p>
         <nav aria-label="Weekly entries">
+          <a class="week-link" href="#week-05"><span class="week-number">05</span><span>Island names<br>& integration testing</span><span aria-hidden="true">↗</span></a>
           <a class="week-link" href="#week-04"><span class="week-number">04</span><span>Water animation<br>& material experiments</span><span aria-hidden="true">↗</span></a>
           <!-- Add a new link here when you add an entry. -->
           <a class="week-link" href="#week-03"><span class="week-number">03</span><span>Client meeting<br>& mapping connections</span><span aria-hidden="true">↗</span></a>
@@ -34,6 +35,47 @@
       </aside>
       <div class="entries">
         <!-- WEEKLY ENTRY: copy an article and change its id, week, title and content. -->
+        <article class="entry" id="week-05">
+          <header class="entry-header">
+            <div class="entry-meta"><span class="week-badge">Week 05</span><time datetime="2026-10-20">October 20, 2026</time><span>Island names & integration testing</span></div>
+            <h2>Making island names appear<br>as part of the water</h2>
+            <p class="entry-deck">Testing how an island name can emerge, move, and disappear without feeling like a separate interface label.</p>
+          </header>
+
+          <div class="prose">
+            <h3>Testing the island name as part of the map</h3>
+            <p>This week, I continued working with the water prototype, but instead of adding another large feature, I focused on how the name of an island could appear after it is selected. I wanted the label to feel connected to the visual language I had already been developing rather than simply placing a fixed title on top of the map.</p>
+
+            <p>I used Seagull Island as a temporary test case. My first experiments made the text rise vertically, but that did not make sense for a flat map viewed from above. I changed the idea so that the letters appear from the surface of the water instead. The water visually pulls away from the text as it becomes visible, making the name feel as if it is being revealed by the map itself.</p>
+
+            <p>I also tested giving the letters slightly different positions and rotations instead of keeping them on one perfectly straight line. This makes the name feel less like a standard interface heading and more like something floating on the water. The movement is intentionally subtle because the name still needs to be readable. When another island is selected, the previous name gradually fades and sinks back into the water before the next one appears.</p>
+          </div>
+
+          <figure class="discussion">
+            <a href="assets/week5-2.png" target="_blank" rel="noopener" aria-label="Open Week 5 group project interface screenshot at full size in a new tab"><img src="assets/week5-2.png" alt="Screenshot of the group interactive map project in VS Code and browser preview, showing the shared interface layout with island list, central map area, and information card." width="2048" height="1107" loading="lazy"></a>
+            <a href="assets/week5-1.png" target="_blank" rel="noopener" aria-label="Open Week 5 water and island-name prototype screenshot at full size in a new tab"><img src="assets/week5-1.png" alt="Screenshot of the island-name prototype showing Seagull Island emerging over the water with animated current lines and interface controls below." width="2048" height="1060" loading="lazy"></a>
+            <figcaption><span>01–02 / Week 5 development comparison</span>On the left is the current shared project interface, and on the right is my island-name prototype. Showing them together helps explain the next step of adapting my test into the group repository.</figcaption>
+          </figure>
+
+          <div class="prose">
+            <aside class="reflection"><span class="label">Working thought</span><p>Can the island name behave like part of the landscape while still remaining clear enough to guide the visitor?</p></aside>
+
+            <h3>Connecting the text with the water system</h3>
+            <p>One issue I started thinking about is the relationship between the name and the animated currents. If the water continues moving directly through the letters, the result can become visually confusing. I therefore began treating the name almost like a small temporary island: the surrounding water should react to it or at least leave enough visual space around it. This is still an approximation, but it helps the text feel integrated with the same system rather than layered independently on top.</p>
+
+            <p>This experiment also made me reconsider how much animation is necessary. The effect becomes more interesting when the name appears slowly and the water responds around it, but too much movement can distract from the documentary content. For the final interface, the animation should support orientation first and only then contribute to the atmosphere of the map.</p>
+
+            <h3>Moving from my prototype into the group project</h3>
+            <p>The next step is to bring this experiment into our shared project repository. My current prototype is useful because I can change the water, text, and island-selection behaviour quickly, but the group project already has its own structure and components. I need to separate the parts that are reusable from the parts that only belong to my test environment, then adapt them so they can work with the group's island data and navigation.</p>
+
+            <p>I also want to avoid integrating the effect as one large block of code. Ideally, the island-name animation should become a small reusable component that can receive an island name and position from the shared map. This would make it easier for the group to apply the same behaviour to different islands and later replace temporary names with real documentary content.</p>
+
+            <p>Once it is integrated, I want to test three things: whether the name remains readable over the moving water, whether switching between islands feels natural, and whether the effect still performs well inside the larger map. I also need to consider a reduced-motion version so the interface does not depend on animation to communicate which island is selected.</p>
+          </div>
+
+          <footer class="entry-footer"><span>CART 470 / JOURNAL-ENTRY-WK-5</span><a href="#top">Back to top ↑</a></footer>
+        </article>
+
                 <article class="entry" id="week-04">
           <header class="entry-header">
             <div class="entry-meta"><span class="week-badge">Week 04</span><time datetime="2026-10-06">October 6, 2026</time><span>Water animation & material experiments</span></div>
