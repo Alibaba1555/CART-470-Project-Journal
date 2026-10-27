@@ -45,3 +45,6 @@
 #water-frame-wrap iframe{display:block;width:100%;height:720px;border:1px solid var(--line);border-radius:4px;background:#bbcfc6}
 @media(max-width:620px){#water-frame-wrap iframe{height:650px}}
 @media print{.preview-actions button,#water-frame-wrap{display:none}.water-preview{break-inside:avoid}}
+
+.week6-evidence { display: block; }
+.week6-evidence img { display: block; width: 100%; height: auto; }
