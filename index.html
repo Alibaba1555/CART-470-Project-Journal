@@ -25,6 +25,7 @@
       <aside class="index" aria-label="Journal index">
         <p class="eyebrow">Field notes / Index</p>
         <nav aria-label="Weekly entries">
+          <a class="week-link" href="#week-07"><span class="week-number">07</span><span>Connection editing<br>& interface cleanup</span><span aria-hidden="true">↗</span></a>
           <a class="week-link" href="#week-06"><span class="week-number">06</span><span>Components<br>& shared water data</span><span aria-hidden="true">↗</span></a>
           <a class="week-link" href="#week-05"><span class="week-number">05</span><span>Island names<br>& integration testing</span><span aria-hidden="true">↗</span></a>
           <a class="week-link" href="#week-04"><span class="week-number">04</span><span>Water animation<br>& material experiments</span><span aria-hidden="true">↗</span></a>
@@ -35,6 +36,52 @@
         <p class="index-note">An ongoing record of ideas, conversations and design decisions.</p>
       </aside>
       <div class="entries">
+        <article class="entry" id="week-07">
+          <header class="entry-header">
+            <div class="entry-meta"><span class="week-badge">Week 07</span><time datetime="2026-11-03">November 3, 2026</time><span>Connection editing & interface cleanup</span></div>
+            <h2>Making connections easier<br>to save and edit</h2>
+            <p class="entry-deck">Building on the group's line tool and bringing the three pages closer together before our presentation.</p>
+          </header>
+          <div class="prose">
+            <h3>Working with what the group had already built</h3>
+            <p>This week, I worked on the connection-line page. My teammate had already made a form that creates curved lines using start, control, and end coordinates, with repeated icons along the path. I wanted to build on that work without replacing the original way of adding lines. The first problem was that the lines disappeared after refreshing the page.</p>
+            <p>Jimmy suggested keeping the line information as JSON so it could later be used with the database. Since I had worked on JSON saving for the water currents last week, I used a similar approach here. I added Save JSON and Load JSON controls, then added automatic loading from the project's connection file. I also brought the Home, Admin, and Lines navigation into the Lines page so it would feel connected to the rest of the project.</p>
+          </div>
+          <figure class="discussion" style="display:block">
+            <a href="assets/week7-json-test.png" target="_blank" rel="noopener"><img src="assets/week7-json-test.png" alt="Three connection lines saved as connections.json, with coordinate inputs and Save JSON and Load JSON controls." loading="lazy"></a>
+            <figcaption><span>01 / Testing JSON export</span>Testing several curves and exporting their settings. This version confirms the filename after saving.</figcaption>
+          </figure>
+          <div class="prose">
+            <h3>Making the saving process clearer</h3>
+            <p>While testing, I realized that the word “Save” was not very clear. The button downloads a file through the browser; it does not write directly into our project folder. I added a short reminder showing where the exported file needs to go: <code>src/components/connections/data/connections.json</code>. Replacing that file and pushing it to GitHub lets the group use the same starting lines. The water currents and connection lines remain separate JSON files because they describe different things.</p>
+            <p>This is still a file-based workflow, not a completed database connection. For now, it gives us a way to keep our work between sessions and share a configuration without entering every coordinate again.</p>
+            <h3>Adding a more direct way to draw</h3>
+            <p>Entering coordinates is useful when I know exactly where a line should go, but it is slow when I just want to try a shape. I added a Draw Line mode so I can start a connection by clicking two points in the drawing area. I kept the coordinate form for more precise changes. I also added selection, Update Selected, Delete Selected, and Undo controls, because I wanted to adjust or remove individual lines rather than rebuild the whole set.</p>
+            <p>One issue appeared during testing: the interface reported that three lines had loaded, but I could not see them in the drawing area. That showed me that a successful import message is not enough to confirm that the editor works. The saved data, the selected line, and the visible result all need to agree. Checking existing files as well as newly drawn lines is part of my next testing pass.</p>
+          </div>
+          <figure class="discussion" style="display:block">
+            <a href="assets/week7-editor-test.png" target="_blank" rel="noopener"><img src="assets/week7-editor-test.png" alt="Connection editor with Draw Line, selection, update, delete and undo controls; three lines are reported loaded but the visible canvas is empty." loading="lazy"></a>
+            <figcaption><span>02 / Editing controls and a testing issue</span>The new controls are in place, but this screenshot also records the visibility problem I encountered after loading existing lines.</figcaption>
+          </figure>
+          <div class="prose">
+            <h3>Pulling back on the visual redesign</h3>
+            <p>I also worked on making Home, Admin, and Lines look more consistent for our upcoming presentation. The client liked the typeface in my Seagull Island title animation, so I wanted to preserve that part while making the menus and controls fit better together.</p>
+            <p>The first styling pass went too far. It added extra headings, descriptions, and decorative elements, and there was too much green across the editor. I felt it was starting to look like a generic designed template instead of our project. I revised the direction to keep the original wording, a beige page background, and a white drawing area with purple controls. For Admin, I kept different button colours so actions such as uploading, saving, and deleting are easier to distinguish.</p>
+          </div>
+          <figure class="discussion" style="display:block">
+            <a href="assets/week7-style-experiment.png" target="_blank" rel="noopener"><img src="assets/week7-style-experiment.png" alt="Intermediate green connection editor design with added heading and description, before the simpler white and purple revision." loading="lazy"></a>
+            <figcaption><span>03 / An intermediate styling attempt</span>This is the version I decided to simplify, not the final appearance. I removed the added copy and decorations and reduced the green in the drawing interface.</figcaption>
+          </figure>
+          <div class="prose">
+            <aside class="reflection"><span class="label">What I learned</span><p>Making the project feel more complete does not always mean adding more things.</p></aside>
+            <p>The useful changes this week were fairly practical: keeping lines after a session, being able to remove a mistake, and moving between pages. The styling work also reminded me to check whether a change actually helps the project. Consistent spacing and readable controls can do more than adding another title or paragraph.</p>
+            <h3>Next steps</h3>
+            <p>Before the presentation, I want to test the full sequence: open the default JSON, draw a line, edit it, delete it, undo, export, and load the exported file again. I also need to check the revised layout on another screen and confirm with the group how the connection data should eventually reach the database and the main map.</p>
+          </div>
+          <footer class="entry-footer"><span>CART 470 / Week 07</span><a href="#top">Back to top ↑</a></footer>
+        </article>
+
+
         <!-- WEEKLY ENTRY: copy an article and change its id, week, title and content. -->
                 <article class="entry" id="week-06">
           <header class="entry-header">
