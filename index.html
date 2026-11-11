@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Tianshun Wu's CART 470 process journal — Documentary Encounters in the Hochelaga Archipelago.">
   <title>CART 470 — Tianshun Wu</title>
-  <link rel="stylesheet" href="styles.css?v=week6-shared-water-1">
+  <link rel="stylesheet" href="styles.css?v=week8-credits-1">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23354754'/%3E%3Ctext x='20' y='28' text-anchor='middle' font-family='serif' font-size='28' fill='%23faf9f5'%3EJ%3C/text%3E%3C/svg%3E">
-  <script src="script.js?v=week6-shared-water-1" defer></script>
+  <script src="script.js?v=week8-credits-1" defer></script>
 </head>
 <body id="top">
   <a class="skip-link" href="#journal">Skip to journal</a>
@@ -25,6 +25,7 @@
       <aside class="index" aria-label="Journal index">
         <p class="eyebrow">Field notes / Index</p>
         <nav aria-label="Weekly entries">
+          <a class="week-link" href="#week-08"><span class="week-number">08</span><span>Credits page<br>& interaction testing</span><span aria-hidden="true">↗</span></a>
           <a class="week-link" href="#week-07"><span class="week-number">07</span><span>Connection editing<br>& interface cleanup</span><span aria-hidden="true">↗</span></a>
           <a class="week-link" href="#week-06"><span class="week-number">06</span><span>Components<br>& shared water data</span><span aria-hidden="true">↗</span></a>
           <a class="week-link" href="#week-05"><span class="week-number">05</span><span>Island names<br>& integration testing</span><span aria-hidden="true">↗</span></a>
@@ -36,6 +37,69 @@
         <p class="index-note">An ongoing record of ideas, conversations and design decisions.</p>
       </aside>
       <div class="entries">
+        <article class="entry" id="week-08">
+          <header class="entry-header">
+            <div class="entry-meta"><span class="week-badge">Week 08</span><time datetime="2026-11-10">November 10, 2026</time><span>Credits page & interaction testing</span></div>
+            <h2>A small journey<br>through the credits</h2>
+            <p class="entry-deck">Testing a paper boat, a watercolor river, and a few small interactions for the end of our map experience.</p>
+          </header>
+          <div class="prose">
+            <h3>Giving the credits a place in the project</h3>
+            <p>This week, my task was to develop an interesting credits page for our Hochelaga Archipelago project. I wanted it to feel connected to the watercolor islands and water effects we have been working on. My starting idea was to let visitors follow a small paper boat down a river while the contributors' names appear along the sides.</p>
+            <p>I made a separate repository, <code>CART470-Credits-Test</code>, so I could experiment before bringing the page into our shared React project. The prototype uses HTML, CSS, and JavaScript. I used AI-assisted coding to build and revise it, then reviewed the results in the browser and adjusted the visual direction. For now, our group and Liz are included, while the other names and roles are playful placeholders for testing the layout.</p>
+          </div>
+          <figure class="discussion week8-evidence">
+            <a href="assets/week8-credits-opening.png" target="_blank" rel="noopener"><img src="assets/week8-credits-opening.png" alt="Hochelaga Archipelago credits opening with a cream paper background, a pale watercolor river and a small paper boat." loading="lazy"></a>
+            <figcaption><span>01 / Opening the journey</span>I simplified the opening to the project title and a short invitation to follow the current.</figcaption>
+          </figure>
+          <div class="prose">
+            <h3>Finding the right view of the boat</h3>
+            <p>The boat took several revisions. The first version looked too flat, so I tried a small 3D paper model with visible folds and shading. However, a view that was too directly overhead made it look abstract. I adjusted it toward a slightly more side-on view so the folded center and hull were easier to recognize, while still fitting the map's overall perspective.</p>
+            <p>The boat follows the curved river as the viewer scrolls. I added smooth turning and a little rocking, but kept the movement small. I wanted it to feel like it was floating without distracting from the names. There is also a pause control for the water and extra rocking, and support for reduced motion.</p>
+          </div>
+          <figure class="discussion week8-evidence">
+            <a href="assets/week8-credits-collaborator.png" target="_blank" rel="noopener"><img src="assets/week8-credits-collaborator.png" alt="The paper boat travelling past the Liz Miller collaborator section along the watercolor river." loading="lazy"></a>
+            <figcaption><span>02 / Moving past the names</span>The boat connects the sections visually. This screenshot also shows an issue to revisit: its path can overlap the text.</figcaption>
+          </figure>
+          <div class="prose">
+            <h3>Adding a little personality</h3>
+            <p>I added a clickable seagull near the special thanks section. It cycles through short lines such as “Still no fries?” and “Fine. Put me above the director.” At first, its message appeared as a notification at the bottom of the screen. I moved it into a comic-style speech bubble beside the bird so it felt like the seagull was speaking.</p>
+            <p>The first bubble had a visible gap where its tail joined the border. Replacing the separate shapes with one continuous SVG outline fixed that connection. This was a small detail, but the broken outline made the interaction look unfinished.</p>
+          </div>
+          <figure class="discussion week8-evidence">
+            <a href="assets/week8-credits-seagull.png" target="_blank" rel="noopener"><img src="assets/week8-credits-seagull.png" alt="Special thanks placeholder credits with Steven Gull and a comic speech bubble saying Fine. Put me above the director." loading="lazy"></a>
+            <figcaption><span>03 / A small optional interaction</span>Repeated clicks change the seagull's dialogue. The supporting names are temporary, not the final contributor list.</figcaption>
+          </figure>
+          <div class="prose">
+            <h3>Deciding what to keep</h3>
+            <p>I also tested a message bottle, watercolor circles beside the names, and a stronger comic-style wake behind the boat. After seeing them together, I removed the bottle and name highlights. The heavier wake was also too noticeable, so I returned to a simple pale arc and made it slightly larger. I preferred having fewer details that fit the atmosphere.</p>
+            <p>At the end, the boat approaches a small wooden dock. The early dock looked too much like a flat rectangle placed on the water. I added plank thickness, posts, wood grain, and shadows, then tested its angle and position. I eventually kept it horizontal and moved it closer to the bank, with the boat turning toward it as the page reaches the bottom.</p>
+          </div>
+          <figure class="discussion week8-evidence">
+            <a href="assets/week8-credits-ending.png" target="_blank" rel="noopener"><img src="assets/week8-credits-ending.png" alt="Credits ending with the thank-you message and paper boat beside a small horizontal wooden dock." loading="lazy"></a>
+            <figcaption><span>04 / Giving the journey an ending</span>The dock provides a stopping point. I continued adjusting its distance from the bank after this screenshot.</figcaption>
+          </figure>
+          <div class="prose">
+            <aside class="reflection"><span class="label">What I learned</span><p>A small interaction works better when its scale and movement belong to the rest of the page.</p></aside>
+            <p>This week reminded me that adding an effect is only the beginning. Most of the work was comparing versions and deciding what felt right. The boat, wake, and dock needed to share a believable perspective, while the credits still needed to be easy to read.</p>
+            <h3>Next steps</h3>
+            <p>I want to show this version to the group and Liz, check whether the ending fits the main map, and confirm the real names and roles. I also need to adjust the areas where the boat crosses the text, test different screen sizes, and check whether visitors notice the seagull without instructions. The prototype is available separately on GitHub Pages; integrating it into React and linking it back to the actual map are still next steps.</p>
+          </div>
+          <section class="water-preview credits-preview" aria-labelledby="credits-preview-title">
+            <p class="eyebrow">Live prototype / Week 08</p>
+            <h3 id="credits-preview-title">Try the credits journey</h3>
+            <p>Open the preview and scroll inside it to follow the paper boat. Click the seagull in Special Thanks more than once, try Pause water, and continue to the bottom to see the docking animation.</p>
+            <div class="preview-actions">
+              <button id="credits-preview-toggle" type="button" aria-expanded="false" aria-controls="credits-frame-wrap">Open live preview</button>
+              <a href="https://alibaba1555.github.io/CART470-Credits-Test/" target="_blank" rel="noopener">Open full-size in a new tab ↗</a>
+            </div>
+            <div id="credits-frame-wrap" hidden></div>
+            <p class="preview-note">The embedded version adapts to this journal's width. Open it in a new tab to test the full desktop layout. If the window does not load, use the link above.</p>
+          </section>
+          <footer class="entry-footer"><span>CART 470 / Week 08</span><a href="#top">Back to top ↑</a></footer>
+        </article>
+
+
         <article class="entry" id="week-07">
           <header class="entry-header">
             <div class="entry-meta"><span class="week-badge">Week 07</span><time datetime="2026-11-03">November 3, 2026</time><span>Connection editing & interface cleanup</span></div>

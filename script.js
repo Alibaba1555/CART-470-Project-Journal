@@ -34,3 +34,23 @@ if (previewToggle && previewWrap) {
     }
   });
 }
+
+// Week 8: create the iframe only when requested; closing unloads the animation.
+const creditsToggle = document.getElementById('credits-preview-toggle');
+const creditsWrap = document.getElementById('credits-frame-wrap');
+if (creditsToggle && creditsWrap) {
+  creditsToggle.addEventListener('click', () => {
+    const opening = creditsToggle.getAttribute('aria-expanded') !== 'true';
+    creditsToggle.setAttribute('aria-expanded', String(opening));
+    creditsToggle.textContent = opening ? 'Close live preview' : 'Open live preview';
+    creditsWrap.hidden = !opening;
+    creditsWrap.replaceChildren();
+    if (opening) {
+      const frame = document.createElement('iframe');
+      frame.title = 'Week 8 Hochelaga Archipelago interactive credits prototype';
+      frame.src = 'https://alibaba1555.github.io/CART470-Credits-Test/';
+      frame.allowFullscreen = true;
+      creditsWrap.appendChild(frame);
+    }
+  });
+}

@@ -48,3 +48,12 @@
 
 .week6-evidence { display: block; }
 .week6-evidence img { display: block; width: 100%; height: auto; }
+
+/* Week 8 screenshots and live credits prototype. */
+.week8-evidence{display:block}
+.week8-evidence figcaption{margin-top:.8rem}
+#credits-frame-wrap[hidden]{display:none}
+#credits-frame-wrap{margin-top:1rem}
+#credits-frame-wrap iframe{display:block;width:100%;height:740px;border:1px solid var(--line);border-radius:4px;background:#f2f0e6}
+@media(max-width:620px){#credits-frame-wrap iframe{height:620px}}
+@media print{#credits-frame-wrap{display:none}}
